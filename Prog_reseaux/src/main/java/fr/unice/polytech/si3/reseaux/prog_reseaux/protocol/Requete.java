@@ -23,7 +23,7 @@ public class Requete {
     @Override
     public String toString() {
         return "Requete{" +
-                "type='" + type.toString() + '\'' +
+                "type='" + type + '\'' +
                 ", data=" + data.toString() +
                 '}';
     }
