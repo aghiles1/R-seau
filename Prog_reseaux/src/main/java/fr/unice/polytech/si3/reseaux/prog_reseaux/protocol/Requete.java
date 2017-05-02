@@ -3,10 +3,12 @@ package fr.unice.polytech.si3.reseaux.prog_reseaux.protocol;
 import java.io.Serializable;
 
 /**
- * Created by User on 02/05/2017.
+ * @author Elie Baroghel
  */
 public class Requete implements Serializable {
-    private String type;
+	private static final long serialVersionUID = -3978544806684841938L;
+	
+	private String type;
     private Object data;
 
     public Requete(String type, Object data){

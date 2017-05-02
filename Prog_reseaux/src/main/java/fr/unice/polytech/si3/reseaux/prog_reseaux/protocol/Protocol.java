@@ -1,7 +1,7 @@
 package fr.unice.polytech.si3.reseaux.prog_reseaux.protocol;
 
 /**
- * Created by User on 02/05/2017.
+ * @author Elie Baroghel
  */
 public class Protocol {
     public static final String ADD = "ADD";
