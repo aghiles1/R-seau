@@ -1,9 +1,11 @@
 package fr.unice.polytech.si3.reseaux.prog_reseaux.protocol;
 
+import java.io.Serializable;
+
 /**
  * Created by User on 02/05/2017.
  */
-public class Requete {
+public class Requete implements Serializable {
     private String type;
     private Object data;
 
