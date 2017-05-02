@@ -1,0 +1,57 @@
+Sérialisation Objet
+
+Requete par un Objet Requete
+
+public class Requete {
+
+    private String type;
+    private Object data;
+
+    public Requete(String type, Object data){
+        this.type = type;
+        this.data = data;
+    }
+
+    public String getType(){
+        return type;
+    }
+
+    public Object getData(){
+        return data;
+    }
+
+    @Override
+    public String toString(){
+        return "type: " + type + System.lineSeparator() + "data: " + data.toString();
+    }
+}
+
+Le serveur utilise cette classe pour recevoir les requetes et 
+le client pour recevoir les reponses de ses requetes.
+
+Suivant le type de requete (donné par la variable type), on caste un objet différent pour data.
+
+Type de requete :
+	ADD : pour ajouter ou modifier une idée.
+		Objet attendu :
+			- en requete : Idee
+			- en reponse : 
+			
+	LIST : pour lister l'ensemble des idées
+		Objet attendu :
+			- en requete :
+			- en réponse : ArrayList<Idee>
+			
+	JOIN : pour participer à une idée
+		Objet attendu :
+			- en requete : Participer
+			- en réponse :
+			
+	STUDENTS : pour lister les participants d'une idée
+		Objet attendu :
+			- en requete : Idee
+			- en réponse : ArrayList<Etudiant>
+			
+	ERROR : pour renvoyer les erreurs
+		Objet attendu :
+			Erreur
