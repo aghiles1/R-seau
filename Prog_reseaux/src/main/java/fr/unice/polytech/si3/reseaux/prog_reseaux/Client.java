@@ -13,6 +13,8 @@ public class Client {
 	public Client(){
 		try {
 			client = new Socket(Configuration.NOM_MACHINE, Configuration.NUM_PORT);
+			
+			client.close();
 		} catch (UnknownHostException e) {
 			
 			e.printStackTrace();

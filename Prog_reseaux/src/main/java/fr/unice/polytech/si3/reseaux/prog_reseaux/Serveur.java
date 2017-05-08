@@ -14,13 +14,13 @@ public class Serveur {
     public Serveur(){
     	try {
 			serv = new ServerSocket(Configuration.NUM_PORT);
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
-    	
-    	try {
+		
 			client = serv.accept();
+			
+			System.out.println("co ok");
+			serv.close();
+			client.close();
+			
 		} catch (IOException e) {
 			
 			e.printStackTrace();
