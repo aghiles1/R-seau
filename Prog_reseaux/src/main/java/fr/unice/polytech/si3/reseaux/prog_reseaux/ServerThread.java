@@ -3,7 +3,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+import fr.unice.polytech.si3.reseaux.prog_reseaux.protocol.Idee;
+import fr.unice.polytech.si3.reseaux.prog_reseaux.protocol.Protocol;
 import fr.unice.polytech.si3.reseaux.prog_reseaux.protocol.Requete;
+import modele.Modele;
 
 public class ServerThread implements Runnable{
 	ObjectInputStream servIn;
@@ -36,8 +39,16 @@ public class ServerThread implements Runnable{
 				r = (Requete) servIn.readObject();
 
                 System.out.println("Reçu chez " + this.socCli.getInetAddress() + " : " + r.toString());
-
-                Requete reponse = new Requete(r.getType(), null);
+                
+                Requete reponse = null;
+                
+                if(r.getType().equals(Protocol.ADD)){
+                	Modele.addIdee((Idee)(r.getData()));
+                	reponse = new Requete(Protocol.ERROR, "OK");
+                }
+                else if(r.getType().equals(Protocol.LIST)){
+                	reponse = new Requete(Protocol.LIST, Modele.getList());
+                }
 
                 servOut.writeObject(reponse);
 
