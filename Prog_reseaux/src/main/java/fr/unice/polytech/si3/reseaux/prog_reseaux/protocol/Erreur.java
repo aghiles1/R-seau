@@ -1,10 +1,12 @@
 package fr.unice.polytech.si3.reseaux.prog_reseaux.protocol;
 
+import java.io.Serializable;
+
 /**
  * Classe servant à la communication.
  * Utilisée lorsque l'on souhaite renvoyer une erreur.
  */
-public class Erreur {
+public class Erreur implements Serializable {
     private String nom;
     private String desc;
 

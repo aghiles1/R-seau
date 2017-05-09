@@ -1,12 +1,14 @@
 package fr.unice.polytech.si3.reseaux.prog_reseaux.protocol;
 
+import java.io.Serializable;
+
 /**
  *
  * Classe qui contient les informations d'un étudiant.
  *
  * @author Rachida, Elie
  */
-public class Etudiant {
+public class Etudiant implements Serializable {
     private String nom;
     private String email;
 

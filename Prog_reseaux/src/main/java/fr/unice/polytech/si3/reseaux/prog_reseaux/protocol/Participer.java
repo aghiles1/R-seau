@@ -1,5 +1,7 @@
 package fr.unice.polytech.si3.reseaux.prog_reseaux.protocol;
 
+import java.io.Serializable;
+
 /**
  * Classe servant à la communication.
  * Utilisée lorsque l'on souhaite ajouter un participant à une idée.
@@ -7,7 +9,7 @@ package fr.unice.polytech.si3.reseaux.prog_reseaux.protocol;
  *
  * @author Rachida, Elie
  */
-public class Participer {
+public class Participer implements Serializable {
     private Idee idee;
     private Etudiant participant;
 

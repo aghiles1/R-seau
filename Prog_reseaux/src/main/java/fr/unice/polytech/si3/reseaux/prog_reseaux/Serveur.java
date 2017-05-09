@@ -4,6 +4,8 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.UnknownHostException;
 
+import modele.Modele;
+
 /**
  * @author Azu-Chan
  */
@@ -18,6 +20,7 @@ public class Serveur {
     	}
     	
     	Serveur serv = new Serveur();
+    	Modele.init();
     	
     	try{
     		port = new Integer(args[0]);
