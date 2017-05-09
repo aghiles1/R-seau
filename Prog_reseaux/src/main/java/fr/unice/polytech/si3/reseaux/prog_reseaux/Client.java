@@ -1,26 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package fr.unice.polytech.si3.reseaux.prog_reseaux;
 
 import fr.unice.polytech.si3.reseaux.prog_reseaux.protocol.Protocol;
 import fr.unice.polytech.si3.reseaux.prog_reseaux.protocol.Requete;
 
-import java.io.*;
-import java.net.InetSocketAddress;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.SocketAddress;
-import java.net.UnknownHostException;
 
 /**
- * @author 
+ *
+ * @author user
  */
 public class Client {
-	Socket client;
 
-	public static void main(String[] s){
-        new Client().start(s[1],Integer.valueOf(s[2]));
+    public Client(){
+
     }
-	
-	public Client(){
-	}
 
     public void start(String server, int port){
         try{
@@ -38,11 +38,8 @@ public class Client {
 
             clientInputStream.close();
             clientOutputStream.close();
-            socketConnection.close();
         }catch (Exception e){
             System.out.println(e);
         }
     }
-
-
 }

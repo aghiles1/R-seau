@@ -36,10 +36,6 @@ public class MainAppTest {
     @After
     public void tearDown() {
     }
-    
-    @Test
-    public void testMain() {
 
-    }
     
 }
